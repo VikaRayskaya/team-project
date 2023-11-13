@@ -1,0 +1,29 @@
+# ex 5 Grinik Aleksandra
+while True:
+    n = int(input("Введите натуральное число: \n")) #input n
+    if n < 0:  # Check that numbers aren't below zero
+        print("Ошибка, введите число большее чем 0\n")
+    else:
+        break
+
+n_list = [] # create list for our numbers
+
+print("Введите числа от 1 до n пропуская одно из них:")
+
+for i in range(n-1):  #enter the numbers from 1 to n-1
+    n_list.append(int(input()))  # input numbers from 1 to n
+
+n_list.sort(reverse=False)  #put the numbers in ascending order
+print("Missing number:")
+
+for i in range(1, len(n_list)):  #I'm doing a loop to find out the missing number
+    if i == n_list[i-1]:  #if everything fits together, then I check further
+        continue  #continue
+    else:
+        print(i)  #if the number is not equal, then it is skipped
+        break
+
+if n in n_list:  #if the number "n" is suddenly omitted from the spike above, I check it
+    n = n
+else:
+    print(n)  #I output it if it is actually skipped
