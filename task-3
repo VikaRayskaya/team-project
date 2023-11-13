@@ -1,0 +1,27 @@
+# ex 3  Grinik Aleksandra
+import statistics as stat  # import statistics for further actions
+n_list = []  # create list for numbers
+
+while True:
+    n, k = map(int, input("Введите 2 положительных числа:\n").split())  # input the numbers
+    if n < 0:  # Check that numbers aren't below zero
+        print("Ошибка, введены отрицательные числа")
+    elif k < 0:  # Check that numbers aren't below zero
+        print("Ошибка, введены отрицательные числа")
+    else:
+        break
+
+print("Введите нужное количество чисел(первая цифра сверху):\n")
+
+for i in range(n):  # We enter exactly n numbers
+    n_list.append(int(input()))  # input numbers into list
+
+k_list = n_list[:k]  # Select the first k elements
+k_list.sort(reverse=False)  #We put the numbers in ascending order
+
+print(f"Arithmetic mean: {stat.mean(k_list)}")  #Calculate the arithmetic mean
+print(f"Harmonic Mean: {stat.harmonic_mean(k_list)}")  #Calculate the harmonic mean
+print(f"Maximum element: {k_list[-1]}")  #Calculating the Maximum element
+print(f"The second maximum element: {k_list[-2]}")  # We find the second maximal element using a slice
+print(f"Minimum element: {k_list[0]}")  #Calculating the Minimum element
+print(f"The second minimum element: {k_list[1]}")  # We find the second minimal element using a slice
