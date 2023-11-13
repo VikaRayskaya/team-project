@@ -1,0 +1,20 @@
+#ex 6 Grinik Aleksandra
+while True:
+    n = int(input("Введите число n:\n"))  # Enter the number n
+    if n < 0:  # Check that numbers aren't below zero
+        print("Ошибка, введите число большее чем 0\n")
+    else:
+        break
+
+f1 = 1  #first number in the row
+f2 = 1  #second number in the row
+print('1 1', end=" ")  #print first 2 numbers
+
+
+x = 0  # Create a variable to get to the n-th number
+while x < (n-2): # The first 2 numbers will be equal to ones as written above, so the numbers have become 2 less
+    sum = f1 + f2  # Find the sum that find the next number
+    f1 = f2   # We "move" the value of the numbers so that we can count further
+    f2 = sum  # We "move" the value of the numbers so that we can count further
+    x += 1  #  Add 1 to get closer to 'n'
+    print(sum, end=" ")  # print number
